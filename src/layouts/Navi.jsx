@@ -8,13 +8,16 @@ import {
 } from "semantic-ui-react";
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Navi() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const history =  useHistory()
 
   function handleSignOut(params) {  
   setIsAuthenticated(false);
+  history.push("/")
 }
 
 function handleSignIn(params) {
@@ -30,10 +33,10 @@ function handleSignIn(params) {
 
           <MenuMenu position="right">
             <CartSummary />
-            {isAuthenticated?<SignedIn signOut={handleSignOut} bisey="1" />:<SignedOut signIn={handleSignIn}/>}          
+            {isAuthenticated?<SignedIn signOut={handleSignOut} />:<SignedOut signIn={handleSignIn}/>}          
           </MenuMenu>
         </Container>
-      </Menu>{" "}
+      </Menu>
     </div>
   );
-}
+} 
