@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { Provider } from "react-redux";
 import { configureStore } from "./store/configureStore";
+import 'react-toastify/dist/ReactToastify.css';
 
 const store = configureStore();
 

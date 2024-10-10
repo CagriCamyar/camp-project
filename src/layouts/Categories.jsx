@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuItem, Input, Label, Menu } from "semantic-ui-react";
+import { MenuItem, Menu } from "semantic-ui-react";
 
 export default function Categories() {
   return (
