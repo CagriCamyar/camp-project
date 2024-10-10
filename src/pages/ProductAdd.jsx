@@ -1,7 +1,8 @@
-import { Form, Formik, Field } from "formik";
+import { Form, Formik, Field, ErrorMessage } from "formik";
 import React from "react";
-import { FormField , Button} from "semantic-ui-react";
+import { FormField , Button, Label} from "semantic-ui-react";
 import * as Yup from "yup";
+import CagriCamyarTextInput from "../utilities/customFormControls/CagriCamyarTextInput";
 
 export default function ProductAdd() {
   const initialValues = { productName: "", unitPrice: 10 };
@@ -20,13 +21,9 @@ export default function ProductAdd() {
       )}
       >
         <Form className="ui form">
-          <FormField>
-            <Field name="productName" placeholder="Urun Adi"></Field>
-          </FormField>
-          <FormField>
-          <Field name="unitPrice" placeholder="Urun Fiyati"></Field>
-          </FormField>
-          <Button color="green" type="submit">Submit</Button>
+            <CagriCamyarTextInput name="productName" placeholder="Urun Adi" />
+            <CagriCamyarTextInput name="unitPrice" placeholder="Urun Fiyati"/>
+            <Button color="green" type="submit" ></Button>
         </Form>
       </Formik>
   );
